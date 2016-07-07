@@ -2,7 +2,7 @@
   "name": "usf-repo",
   "description": "Yum Repo Package",
   "version": "1.0.0",
-  "release": "1",
+  "release": "2",
   "keywords": [
     "util",
     "functional",
