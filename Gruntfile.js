@@ -43,7 +43,8 @@ module.exports = function (grunt) {
                     '--license "<%= appEnv.license %>"',
                     '--vendor "University of South Florida"',
                     '--iteration "<%= appEnv.release %>"',
-                    '--after-install "yum-config-manager --enable usf-repo\\*"',
+                    '--after-install ./enable.sh',
+                    '--before-remove ./disable.sh',
                     '-p deploy ./usf-repo.repo=/etc/yum.repos.d/usf-repo.repo'
                 ].join(' ')
             }
