@@ -1,6 +1,6 @@
 
 [usf-repo]
 name=USF-Repo for CentOS $releasever
-baseurl=https://james.it.usf.edu/dist/centos/$releasever/os/
+baseurl=https://james.it.usf.edu/repos/centos/$releasever/$basearch/
 enabled=1
 gpgcheck=0
