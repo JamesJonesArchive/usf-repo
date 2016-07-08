@@ -42,10 +42,25 @@ module.exports = function (grunt) {
                     '--url "<%= appEnv.homepage %>"',
                     '--license "<%= appEnv.license %>"',
                     '--vendor "University of South Florida"',
-                    '--iteration "<%= appEnv.release %>"',
+                    '--iteration "<%= appEnv.release %>.el7"',
                     '--after-install ./enable.sh',
                     '--before-remove ./disable.sh',
-                    '-p deploy ./usf-repo.repo=/etc/yum.repos.d/usf-repo.repo'
+                    '-p deploy ./yum.repos.d/centos-usf-repo.repo=/etc/yum.repos.d/usf-repo.repo'
+                ].join(' ')
+            },
+            for_fedora23: {
+                "command": [
+                    [
+                        '/usr/local/bin/fpm -s dir -t rpm -n \'<%= appEnv.name %>\' -v <%= appEnv.version %> '
+                    ].join(' -d '),
+                    '--description "<%= appEnv.description %>"',
+                    '--url "<%= appEnv.homepage %>"',
+                    '--license "<%= appEnv.license %>"',
+                    '--vendor "University of South Florida"',
+                    '--iteration "<%= appEnv.release %>.fc23"',
+                    '--after-install ./enable.sh',
+                    '--before-remove ./disable.sh',
+                    '-p deploy ./yum.repos.d/fedora-usf-repo.repo=/etc/yum.repos.d/usf-repo.repo'
                 ].join(' ')
             }
         }

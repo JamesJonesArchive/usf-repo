@@ -1,0 +1,6 @@
+
+[usf-repo]
+name=USF-Repo for Fedora $releasever
+baseurl=https://james.it.usf.edu/repos/fedora/$releasever/$basearch/
+enabled=1
+gpgcheck=0
